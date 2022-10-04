@@ -46,7 +46,7 @@ public class RendezVousRessource {
 	System.out.print(LRV);
 	
 	if (LRV.size()!=0)
-		return Response.status(Status.OK).entity("").build();
+		return Response.status(Status.OK).entity(LRV).build();
 	
 	
 	return Response.status(Status.NOT_FOUND).build();	
@@ -75,7 +75,7 @@ public Response getRendezVousbyID(@PathParam("id") int id) {
 //methode5
 @DELETE
 @Path("{id}")
-@Produces(MediaType.APPLICATION_JSON)
+
 public Response supprimerRendezVous(@PathParam("id") int id) {
 	
 	if (RB.deleteRendezVous(id)) {
@@ -95,7 +95,7 @@ public Response modifierRendezVous(@PathParam("id") int id, RendezVous RD) {
 }
 
 
-/*
+
 //methode3
 @GET
 @Produces(MediaType.APPLICATION_JSON)
@@ -115,7 +115,7 @@ public Response getListeRendezVous(@QueryParam(value = "refLogement") String ref
 	}
 	return Response.status(Status.NO_CONTENT).build();
 	}
-*/
+
 
 }
 
